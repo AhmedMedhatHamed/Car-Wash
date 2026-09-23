@@ -8,9 +8,14 @@ class RoleSelectionWidget extends StatelessWidget {
     required this.title,
     required this.desc,
     required this.image,
+    required this.isSelected,
+    required this.onTap,
   });
 
   final String title, desc, image;
+  final bool isSelected;
+  final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,29 +27,50 @@ class RoleSelectionWidget extends StatelessWidget {
             width: 15.0,
             height: 15.0,
             decoration: BoxDecoration(
-              color: AppColors.grey,
+              color: isSelected ? AppColors.primaryColor : AppColors.grey,
               shape: BoxShape.circle,
             ),
           ),
-          SizedBox(width:8.0,),
-          Container(
-            padding: EdgeInsets.only(top:5.0),
-            width: 176.0,
-            height: 151.0,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5.0),
-              color: AppColors.white,
-              border: BoxBorder.all(color: AppColors.primaryColor, width: 3),
-            ),
-            child: Column(
-              children: [
-                Image.asset(image, fit: BoxFit.fill),
-                Text(title, style: AppStyles.cairo700Size30.copyWith(fontSize: 28.0)),
-              ],
+          const SizedBox(width: 8.0),
+          InkWell(
+            onTap: onTap,
+            child: Container(
+              padding: const EdgeInsets.only(top: 5.0),
+              width: 176.0,
+              height: 151.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.0),
+                color: isSelected ? AppColors.primaryColor : AppColors.white,
+                border: Border.all(
+                  color: isSelected ? AppColors.white : AppColors.primaryColor,
+                  width: 3,
+                ),
+              ),
+              child: Column(
+                children: [
+                  Image.asset(
+                    image,
+                    fit: BoxFit.fill,
+                    color: isSelected ? AppColors.white : AppColors.primaryColor,
+                  ),
+                  Text(
+                    title,
+                    style: AppStyles.cairo700Size30.copyWith(
+                      fontSize: 28.0,
+                      color: isSelected ? AppColors.white : AppColors.primaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          SizedBox(width: 16.0,),
-          Text(desc, style: AppStyles.almarai400Size20),
+          const SizedBox(width: 16.0),
+          Text(
+            desc,
+            style: AppStyles.almarai400Size20.copyWith(
+              color:AppColors.primaryColor
+            ),
+          ),
         ],
       ),
     );
