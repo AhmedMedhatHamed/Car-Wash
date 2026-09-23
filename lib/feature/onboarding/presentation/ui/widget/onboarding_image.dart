@@ -3,14 +3,15 @@ import 'package:wash_up/core/utils/app_colors.dart';
 import 'package:wash_up/core/utils/app_images.dart';
 
 class OnboardingImage extends StatelessWidget {
-  const OnboardingImage({super.key});
+  const OnboardingImage({super.key, required this.width, required this.height});
 
+  final double width,height;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 157.0,
-        height: 157.0,
+        width: width,
+        height:height,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color:AppColors.primaryColor,

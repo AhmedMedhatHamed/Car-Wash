@@ -33,11 +33,11 @@ class _OnboardingViewState extends State<OnboardingView> {
         child: Stack(
           children: [
             Positioned(
-              top: 25,
-              right: 25,
+              top: 25.0,
+              right: 25.0,
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, AppRoutes.loginView);
+                  Navigator.pushNamed(context, AppRoutes.selectionView);
                 },
                 child: Text(AppStrings.skip, style: AppStyles.almarai400Size22),
               ),
@@ -47,7 +47,10 @@ class _OnboardingViewState extends State<OnboardingView> {
               child: Column(
                 children: [
                   const SizedBox(height: 120.0),
-                  const OnboardingImage(),
+                  const OnboardingImage(
+                    width: 157.0,
+                    height: 157.0,
+                  ),
                   const SizedBox(height: 65.0),
                   Expanded(
                     child: OnboardingPageView(pageController: pageController),
@@ -65,7 +68,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                           ? CustomButton(
                               text: AppStrings.getStarted,
                               onPressed: () {
-                                Navigator.pushNamed(context, AppRoutes.loginView);
+                                Navigator.pushNamed(context, AppRoutes.selectionView);
                               },
                             )
                           : Row(

@@ -4,6 +4,7 @@ import 'package:wash_up/feature/home/presentation/ui/view/home_view.dart';
 import 'package:wash_up/feature/login/presentation/ui/view/login_view.dart';
 import 'package:wash_up/feature/onboarding/presentation/ui/view/onboarding_view.dart';
 import 'package:wash_up/feature/register/presentation/ui/view/register_view.dart';
+import 'package:wash_up/feature/selection/presentation/ui/view/selection_view.dart';
 import 'package:wash_up/feature/splash/view/splash_view.dart';
 
 class AppRouter {
@@ -20,6 +21,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => LoginView());
       case AppRoutes.homeView:
         return MaterialPageRoute(builder: (_) => HomeView());
+      case AppRoutes.selectionView:
+        return MaterialPageRoute(builder: (_) => SelectionView());
     }
     return null;
   }
