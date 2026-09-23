@@ -16,6 +16,7 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   lottie: ^3.3.3
+  dots_indicator: ^4.0.1
 
 
 dev_dependencies:

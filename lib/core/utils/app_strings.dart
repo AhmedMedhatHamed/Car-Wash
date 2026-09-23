@@ -9,9 +9,9 @@ class AppStrings {
 
   //////////////////////////////////////////////////////////////////////
   /*onboarding*/
-  static const String onboardingTextTitle1 = 'CAR WASH AT YOUR DOORSTEP';
-  static const String onboardingTextTitle2 = 'EASY BOOKING & LIVE TRACkING';
-  static const String onboardingTextTitle3 = 'PREMIUM CARE FOR YOUR CAR';
+  static const String onboardingTextTitle1 = 'CAR WASH AT YOUR\n DOORSTEP';
+  static const String onboardingTextTitle2 = 'EASY BOOKING\n & LIVE TRACkING';
+  static const String onboardingTextTitle3 = 'PREMIUM CARE FOR\n YOUR CAR';
   static const String skip = 'skip';
   static const String onboardingDesc1 =
       'Save your time. Book a professional  wash anytime, anywhere you are.';
