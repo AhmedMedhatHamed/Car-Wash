@@ -40,4 +40,13 @@ class AppStrings {
   static const String welcomeBack = 'Welcome Back!';
   static const String loginDesc = 'Sign in to continue using Wash Up';
   static const String forgotPassword = 'Forgot Password?';
+
+  //////////////////////////////////////////////////////////////////////////////////////
+  /*verification code*/
+  static const String verificationCode = 'Verification Code';
+  static const String verificationDesc =
+      'We have sent the code verification to';
+  static const String didntReceiveTheCode = 'Didn’t receive the code? ';
+  static const String resend = 'Resend';
+  static const String verificationTime = ' (00:45)';
 }

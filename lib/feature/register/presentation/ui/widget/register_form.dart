@@ -7,6 +7,7 @@ import 'package:wash_up/core/utils/app_strings.dart';
 import 'package:wash_up/core/utils/validators.dart';
 import 'package:wash_up/core/widget/custom_button.dart';
 import 'package:wash_up/core/widget/custom_text_form_field.dart';
+import 'package:wash_up/feature/register/data/model/register_model.dart';
 import 'package:wash_up/feature/register/presentation/cubit/register_cubit.dart';
 
 class RegisterForm extends StatelessWidget {
@@ -51,7 +52,7 @@ class RegisterForm extends StatelessWidget {
             const SizedBox(height: 15.0),
             BlocBuilder<RegisterCubit, RegisterState>(
               buildWhen: (previous, current) =>
-              current is RegisterPasswordVisibilityChanged,
+                  current is RegisterPasswordVisibilityChanged,
               builder: (context, state) {
                 return CustomTextFormField(
                   controller: cubit.passwordController,
@@ -78,22 +79,27 @@ class RegisterForm extends StatelessWidget {
                       content: Text('Account created successfully'),
                     ),
                   );
-                  Navigator.pushReplacementNamed(context, AppRoutes.homeView);
-
-                } else if (state is RegisterFailure) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(state.message)),
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.verificationCodeView,
+                    arguments: state.user,
                   );
+                } else if (state is RegisterFailure) {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text(state.message)));
                 }
               },
               builder: (context, state) {
-                if(state is RegisterLoading) {
-                  return CircularProgressIndicator(color: AppColors.primaryColor);
-              } else{
-                   return CustomButton(
+                if (state is RegisterLoading) {
+                  return CircularProgressIndicator(
+                    color: AppColors.primaryColor,
+                  );
+                } else {
+                  return CustomButton(
                     text: AppStrings.signUp,
                     onPressed: () {
-                     cubit.register();
+                      cubit.register();
                     },
                   );
                 }

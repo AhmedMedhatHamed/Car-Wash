@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:wash_up/core/utils/app_colors.dart';
+import 'package:wash_up/core/utils/app_images.dart';
+
+class LogoImage extends StatelessWidget {
+  const LogoImage({super.key, required this.width, required this.height});
+
+  final double width, height;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: AppColors.primaryColor,
+          border: Border.all(color: AppColors.white, width: 3),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 12,
+              offset: Offset(7, 7),
+            ),
+          ],
+        ),
+        child: ClipOval(
+          child: Image.asset(AppImages.splashImage, fit: BoxFit.cover),
+        ),
+      ),
+    );
+  }
+}

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:wash_up/core/utils/app_colors.dart';
 
 class AppStyles {
-
   static TextStyle cairo700Size32 = TextStyle(
     fontSize: 32.0,
     fontWeight: FontWeight.w700,
@@ -42,6 +41,12 @@ class AppStyles {
   static TextStyle almarai400Size18 = TextStyle(
     fontSize: 18.0,
     fontWeight: FontWeight.w400,
+    color: AppColors.primaryColor,
+    fontFamily: 'Almarai',
+  );
+  static TextStyle almarai700Size18 = TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w700,
     color: AppColors.primaryColor,
     fontFamily: 'Almarai',
   );
