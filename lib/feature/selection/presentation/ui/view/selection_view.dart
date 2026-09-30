@@ -25,58 +25,61 @@ class _SelectionViewState extends State<SelectionView> {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(height: 30.0),
-            const OnboardingImage(height: 120.0, width: 120.0),
-            const SizedBox(height: 14.0),
-            Text(
-              AppStrings.roleSelectionTitle,
-              style: AppStyles.cairo700Size30,
-            ),
-            Text(
-              AppStrings.roleSelectionDesc,
-              style: AppStyles.almarai400Size18,
-            ),
-            const SizedBox(height: 60.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                RoleSelectionWidget(
-                  title: AppStrings.carOwnerTitle,
-                  desc: AppStrings.carOwnerDesc,
-                  image: AppImages.carOwner,
-                  isSelected: selectedRole == UserRole.carOwner,
-                  onTap: () {
-                    setState(() {
-                      selectedRole = UserRole.carOwner;
-                    });
-                  },
-                ),
-                const SizedBox(height: 30.0),
-                RoleSelectionWidget(
-                  title: AppStrings.serviceProviderTitle,
-                  desc: AppStrings.serviceProviderDesc,
-                  image: AppImages.serviceProvider,
-                  isSelected: selectedRole == UserRole.serviceProvider,
-                  onTap: () {
-                    setState(() {
-                      selectedRole = UserRole.serviceProvider;
-                    });
-                  },
-                ),
-              ],
-            ),
-            const SizedBox(height: 60.0),
-            CustomButton(
-              text: AppStrings.continueButton,
-              onPressed: () {
-                if (selectedRole != null) {
-                  Navigator.pushNamed(context, AppRoutes.registerView);
-                }
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 30.0),
+              const OnboardingImage(height: 120.0, width: 120.0),
+              const SizedBox(height: 14.0),
+              Text(
+                AppStrings.roleSelectionTitle,
+                style: AppStyles.cairo700Size30,
+              ),
+              Text(
+                AppStrings.roleSelectionDesc,
+                style: AppStyles.almarai400Size18,
+              ),
+              const SizedBox(height: 60.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  RoleSelectionWidget(
+                    title: AppStrings.carOwnerTitle,
+                    desc: AppStrings.carOwnerDesc,
+                    image: AppImages.carOwner,
+                    isSelected: selectedRole == UserRole.carOwner,
+                    onTap: () {
+                      setState(() {
+                        selectedRole = UserRole.carOwner;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 30.0),
+                  RoleSelectionWidget(
+                    title: AppStrings.serviceProviderTitle,
+                    desc: AppStrings.serviceProviderDesc,
+                    image: AppImages.serviceProvider,
+                    isSelected: selectedRole == UserRole.serviceProvider,
+                    onTap: () {
+                      setState(() {
+                        selectedRole = UserRole.serviceProvider;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              const SizedBox(height: 60.0),
+              CustomButton(
+                text: AppStrings.continueButton,
+                onPressed: () {
+                  if (selectedRole != null) {
+                    Navigator.pushNamed(context, AppRoutes.registerView);
+                  }
+                },
+              ),
+              const SizedBox(height: 14.0),
+            ],
+          ),
         ),
       ),
     );
