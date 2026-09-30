@@ -7,7 +7,6 @@ import 'package:wash_up/core/utils/app_strings.dart';
 import 'package:wash_up/core/utils/validators.dart';
 import 'package:wash_up/core/widget/custom_button.dart';
 import 'package:wash_up/core/widget/custom_text_form_field.dart';
-import 'package:wash_up/feature/register/data/model/register_model.dart';
 import 'package:wash_up/feature/register/presentation/cubit/register_cubit.dart';
 
 class RegisterForm extends StatelessWidget {
@@ -79,7 +78,7 @@ class RegisterForm extends StatelessWidget {
                       content: Text('Account created successfully'),
                     ),
                   );
-                  Navigator.pushNamed(
+                  Navigator.pushReplacementNamed(
                     context,
                     AppRoutes.verificationCodeView,
                     arguments: state.user,

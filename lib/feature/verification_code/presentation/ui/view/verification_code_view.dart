@@ -49,18 +49,9 @@ class _VerificationCodeViewState extends State<VerificationCodeView> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: size.height * 0.01),
-              Stack(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.arrow_back, size: 30),
-                  ),
-                  LogoImage(width: size.width * 0.3, height: size.width * 0.3),
-                ],
-              ),
+              SizedBox(height: size.height * 0.02),
+              LogoImage(width: size.width * 0.3, height: size.width * 0.3),
+
               SizedBox(height: size.height * 0.04),
               Text(
                 AppStrings.verificationCode,
