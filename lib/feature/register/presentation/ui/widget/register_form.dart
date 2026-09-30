@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wash_up/core/routing/app_routes.dart';
+import 'package:wash_up/core/utils/app_colors.dart';
 import 'package:wash_up/core/utils/app_strings.dart';
 import 'package:wash_up/core/utils/validators.dart';
 import 'package:wash_up/core/widget/custom_button.dart';
@@ -86,12 +87,16 @@ class RegisterForm extends StatelessWidget {
                 }
               },
               builder: (context, state) {
-                return CustomButton(
-                  text: AppStrings.signUp,
-                  onPressed: () {
-                    if (state is! RegisterLoading) cubit.register();
-                  },
-                );
+                if(state is RegisterLoading) {
+                  return CircularProgressIndicator(color: AppColors.primaryColor);
+              } else{
+                   return CustomButton(
+                    text: AppStrings.signUp,
+                    onPressed: () {
+                     cubit.register();
+                    },
+                  );
+                }
               },
             ),
           ],
