@@ -72,7 +72,7 @@ class _SelectionViewState extends State<SelectionView> {
               text: AppStrings.continueButton,
               onPressed: () {
                 if (selectedRole != null) {
-                  Navigator.pushNamed(context, AppRoutes.loginView);
+                  Navigator.pushNamed(context, AppRoutes.registerView);
                 }
               },
             ),

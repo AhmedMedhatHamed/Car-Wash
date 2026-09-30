@@ -45,4 +45,10 @@ class AppStyles {
     color: AppColors.primaryColor,
     fontFamily: 'Almarai',
   );
+
+  static TextStyle poppinsSize22 = TextStyle(
+    fontSize: 22.0,
+    color: AppColors.grey,
+    fontFamily: 'Poppins',
+  );
 }
