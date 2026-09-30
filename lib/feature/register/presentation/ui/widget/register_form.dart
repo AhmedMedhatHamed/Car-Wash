@@ -77,7 +77,7 @@ class RegisterForm extends StatelessWidget {
                       content: Text('Account created successfully'),
                     ),
                   );
-                  Navigator.pushNamed(context, AppRoutes.homeView);
+                  Navigator.pushReplacementNamed(context, AppRoutes.homeView);
 
                 } else if (state is RegisterFailure) {
                   ScaffoldMessenger.of(context).showSnackBar(
