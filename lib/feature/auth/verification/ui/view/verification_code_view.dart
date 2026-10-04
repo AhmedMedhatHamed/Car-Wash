@@ -4,13 +4,13 @@ import 'package:wash_up/core/utils/app_strings.dart';
 import 'package:wash_up/core/utils/app_styles.dart';
 import 'package:wash_up/core/widget/custom_button.dart';
 import 'package:wash_up/core/widget/logo_image.dart';
-import 'package:wash_up/feature/register/data/model/register_model.dart';
-import 'package:wash_up/feature/verification_code/presentation/ui/widget/custom_text_field.dart';
+import 'package:wash_up/feature/auth/register/data/model/register_model.dart';
+import 'package:wash_up/feature/auth/verification/ui/widget/custom_text_field.dart';
 
 class VerificationCodeView extends StatefulWidget {
   const VerificationCodeView({super.key, required this.user});
 
-  final RegisterModel user;
+  final AuthModel user;
 
   @override
   State<VerificationCodeView> createState() => _VerificationCodeViewState();

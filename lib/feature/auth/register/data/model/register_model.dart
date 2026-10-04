@@ -1,11 +1,11 @@
-class RegisterModel {
+class AuthModel {
   final String id;
   final String fullName;
   final String email;
   final String phone;
   final String password;
 
-  RegisterModel({
+  AuthModel({
     required this.fullName,
     required this.email,
     required this.phone,
@@ -22,7 +22,7 @@ class RegisterModel {
     'createdAt': DateTime.now().toIso8601String(),
   };
 
-  factory RegisterModel.fromMap(Map<String, dynamic> map) => RegisterModel(
+  factory AuthModel.fromMap(Map<String, dynamic> map) => AuthModel(
     id: map['id'] ?? '',
     fullName: map['name'] ?? '',
     phone: map['phone'] ?? '',

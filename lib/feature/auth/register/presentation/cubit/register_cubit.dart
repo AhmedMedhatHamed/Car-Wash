@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wash_up/feature/register/data/model/register_model.dart';
-import 'package:wash_up/feature/register/data/repo/register_repo.dart';
+import 'package:wash_up/feature/auth/register/data/model/register_model.dart';
+import 'package:wash_up/feature/auth/register/data/repo/register_repo.dart';
 
 part 'register_state.dart';
 

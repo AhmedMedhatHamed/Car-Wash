@@ -5,5 +5,6 @@ class AppRoutes {
   static const String splashView = 'splashView';
   static const String onboardingView = 'onboardingView';
   static const String selectionView = 'selectionView';
-  static const String verificationCodeView = 'verificationcodeview';
+  static const String verificationCodeView = 'verificationCodeView';
+  static const String forgotPassword = 'forgotPassword';
 }

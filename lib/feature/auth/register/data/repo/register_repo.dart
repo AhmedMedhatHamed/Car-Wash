@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wash_up/feature/register/data/model/register_model.dart';
+import 'package:wash_up/feature/auth/register/data/model/register_model.dart';
 
 class RegisterRepo {
   RegisterRepo({FirebaseAuth? auth, FirebaseFirestore? firestore})
@@ -10,7 +10,7 @@ class RegisterRepo {
   final FirebaseAuth _auth;
   final FirebaseFirestore _firestore;
 
-  Future<RegisterModel> register({
+  Future<AuthModel> register({
     required String name,
     required String phone,
     required String email,
@@ -25,7 +25,7 @@ class RegisterRepo {
       final user = credential.user!;
       await user.updateDisplayName(name);
 
-      final userModel = RegisterModel(
+      final userModel = AuthModel(
         id: user.uid,
         fullName: name,
         phone: phone,

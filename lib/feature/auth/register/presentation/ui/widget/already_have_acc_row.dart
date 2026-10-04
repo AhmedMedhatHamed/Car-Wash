@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/routing/app_routes.dart';
-import '../../../../../core/utils/app_strings.dart';
-import '../../../../../core/utils/app_styles.dart';
+import 'package:wash_up/core/routing/app_routes.dart';
+import 'package:wash_up/core/utils/app_strings.dart';
+import 'package:wash_up/core/utils/app_styles.dart';
+
 
 class AlreadyHaveAccRow extends StatelessWidget {
   const AlreadyHaveAccRow({super.key});

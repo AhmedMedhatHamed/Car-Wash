@@ -13,7 +13,7 @@ final class RegisterPasswordVisibilityChanged extends RegisterState {
 final class RegisterLoading extends RegisterState {}
 
 final class RegisterSuccess extends RegisterState {
-  final RegisterModel user;
+  final AuthModel user;
   RegisterSuccess(this.user);
 }
 
